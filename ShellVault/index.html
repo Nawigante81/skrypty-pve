@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShellVault - Repozytorium Skryptów .sh</title>
+    <meta name="description" content="Katalog skryptów .sh - znajdź, pobierz i używaj. Nowoczesne narzędzia dla Linux i devops.">
+    <meta name="keywords" content="skrypty shell, bash, linux, devops, narzędzia, repozotirum">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <header class="neon-border">
+        <div class="container">
+            <h1 class="logo">
+                <span class="logo-char">&lt;</span><span class="typing-effect">ShellVault</span><span class="logo-char">/&gt;</span>
+            </h1>
+            <p class="subtitle">Twoje centrum dowodzenia dla skryptów .sh</p>
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Szukaj skryptów, tagów, kategorii..." class="neon-input">
+                <span class="search-shortcut">[ / ]</span>
+            </div>
+        </div>
+        <!-- Animowany pasek pod tytułem, pełna szerokość -->
+        <div class="header-animation" aria-hidden="true"></div>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar neon-border">
+            <h2>Kategorie</h2>
+            <ul id="categoriesList">
+                <!-- Kategorie będą ładowane dynamicznie przez JS -->
+            </ul>
+            <div class="how-to-add">
+                <h3>Jak dodać własny skrypt?</h3>
+                <p>Chcesz dodać swój skrypt do ShellVault?</p>
+                <ol>
+                    <li>Sklonuj repozytorium.</li>
+                    <li>Edytuj plik <code class="inline-code">data/scripts.json</code> dodając swój skrypt.</li>
+                    <li>Umieść plik <code class="inline-code">.sh</code> w folderze <code class="inline-code">files/</code>.</li>
+                    <li>Utwórz Pull Request!</li>
+                </ol>
+                <p class="note">Pamiętaj o dodaniu SHA256! Wygeneruj go komendą: <code class="inline-code">sha256sum &lt;plik.sh&gt;</code></p>
+            </div>
+        </aside>
+
+        <section class="script-grid" id="scriptGrid">
+            <!-- Skrypty będą ładowane dynamicznie przez JS -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <p>Brak skryptów spełniających kryteria wyszukiwania.</p>
+                <button id="clearSearch" class="neon-button small">Wyczyść wyszukiwanie</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="neon-border">
+        <div class="container">
+            <p>&copy; 2025 ShellVault. All rights reserved. <span class="neon-text">Hacker vibes only.</span></p>
+        </div>
+    </footer>
+
+    <div id="tooltip" class="tooltip">Uruchamiasz na własną odpowiedzialność!</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>

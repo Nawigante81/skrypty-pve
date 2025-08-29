@@ -1,0 +1,44 @@
+{
+  "effectSettings": {
+    "intensity": "subtle",
+    "color": {
+      "light": "#ffffff",
+      "dark": "#000000"
+    },
+    "size": "medium",
+    "animationDuration": "0.5s",
+    "toggleEffect": true,
+    "theme": {
+      "light": {
+        "background": "#f0f0f0",
+        "text": "#000000"
+      },
+      "dark": {
+        "background": "#1a1a1a",
+        "text": "#ffffff"
+      }
+    },
+    "animations": [
+      {
+        "name": "fadeIn",
+        "duration": "0.5s",
+        "timingFunction": "ease-in"
+      },
+      {
+        "name": "fadeOut",
+        "duration": "0.5s",
+        "timingFunction": "ease-out"
+      },
+      {
+        "name": "scaleUp",
+        "duration": "0.3s",
+        "timingFunction": "ease-in-out"
+      },
+      {
+        "name": "scaleDown",
+        "duration": "0.3s",
+        "timingFunction": "ease-in-out"
+      }
+    ]
+  }
+}

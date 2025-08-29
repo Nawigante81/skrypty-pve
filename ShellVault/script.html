@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="scriptTitle">Ładowanie skryptu...</title>
+    <meta name="description" id="scriptMetaDescription" content="Szczegóły skryptu .sh z ShellVault.">
+    <meta name="keywords" id="scriptMetaKeywords" content="skrypt, shell, bash, linux, devops">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <header class="neon-border">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html" class="neon-text no-underline">&lt;ShellVault/&gt;</a>
+            </h1>
+            <p class="subtitle" id="scriptHeaderSubtitle">Szczegóły skryptu</p>
+        </div>
+    </header>
+
+    <main class="container script-details-page">
+        <section class="script-card full-width neon-border" id="scriptDetailsContainer" style="display: none;">
+            <div class="script-header">
+                <h2 id="scriptName"></h2>
+                <div class="script-tags" id="scriptTags"></div>
+            </div>
+
+            <p class="script-description" id="scriptFullDescription"></p>
+
+            <div class="detail-row">
+                <strong>Rozmiar:</strong> <span id="scriptSize"></span>
+            </div>
+            <div class="detail-row">
+                <strong>SHA256:</strong>
+                <span id="scriptSha256" class="selectable-text"></span>
+                <button class="neon-button small icon-button copy-button" data-copy-target="scriptSha256" aria-label="Kopiuj SHA256">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <span class="copy-feedback">Skopiowano!</span>
+            </div>
+
+            <h3>Podgląd kodu:</h3>
+            <pre class="code-preview neon-border"><code class="language-bash" id="scriptCodePreview"></code></pre>
+            <p class="code-warning">Kod jest ładowany dynamicznie. Zawsze weryfikuj pobrany plik!</p>
+
+            <h3>Instrukcja użycia:</h3>
+            <div class="usage-section" id="scriptUsage">
+                <!-- Instrukcja użycia zostanie wstawiona tutaj -->
+            </div>
+
+            <div class="script-actions">
+                <a id="downloadButton" class="neon-button" download>
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Pobierz
+                </a>
+                <button class="neon-button secondary icon-button copy-button" data-copy-target="scriptCodePreview" aria-label="Kopiuj kod skryptu">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    Kopiuj kod
+                </button>
+            </div>
+            <p class="security-warning" data-tooltip="Uruchamiasz na własną odpowiedzialność! Zawsze sprawdzaj kod przed wykonaniem.">
+                ⚠️ Uwaga bezpieczeństwa: Uruchamiasz na własną odpowiedzialność!
+            </p>
+        </section>
+        <div id="notFoundMessage" class="no-results" style="display: none;">
+            <p>Skrypt o podanym identyfikatorze nie został znaleziony.</p>
+            <a href="index.html" class="neon-button small">Wróć do strony głównej</a>
+        </div>
+    </main>
+
+    <footer class="neon-border">
+        <div class="container">
+            <p>&copy; 2025 ShellVault. All rights reserved. <span class="neon-text">Hacker vibes only.</span></p>
+        </div>
+    </footer>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>
