@@ -13,57 +13,174 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 <body>
-    <div class="scanlines"></div>
-    <header class="neon-border">
-        <div class="container">
-            <h1 class="logo">
-                <span class="logo-char">&lt;</span><span class="typing-effect">ShellVault</span><span class="logo-char">/&gt;</span>
-            </h1>
-            <p class="subtitle">Twoje centrum dowodzenia dla skryptów .sh</p>
-            <div class="search-wrapper">
-                <input type="text" id="searchInput" placeholder="Szukaj skryptów, tagów, kategorii..." class="neon-input">
-                <span class="search-shortcut">[ / ]</span>
+    <!-- Futurystyczne warstwy tła -->
+    <div class="background-layer">
+        <div class="animated-gradient"></div>
+        <div class="particles-container"></div>
+        <div class="geometric-patterns"></div>
+    </div>
+    
+    <!-- Efekty wizualne -->
+    <div class="visual-effects">
+        <div class="scanlines"></div>
+        <div class="mouse-light" id="mouseLight"></div>
+    </div>
+
+    <!-- Futurystyczny header z top navigation -->
+    <header class="futuristic-header">
+        <div class="container-full">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="cyber-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">ShellVault</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </h1>
+                    <p class="cyber-subtitle">Futuristic Shell Script Repository</p>
+                </div>
+                
+                <div class="search-section">
+                    <div class="cyber-search-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search scripts, tags, categories..." class="cyber-input">
+                        <div class="search-effects">
+                            <span class="search-shortcut">[ / ]</span>
+                            <div class="input-glow"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="top-navigation">
+                    <button class="nav-button active" data-action="home">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </button>
+                    <button class="nav-button" data-action="about">
+                        <span class="nav-icon">ℹ️</span>
+                        <span class="nav-text">About</span>
+                    </button>
+                    <button class="nav-button" data-action="contribute">
+                        <span class="nav-icon">➕</span>
+                        <span class="nav-text">Contribute</span>
+                    </button>
+                </nav>
             </div>
         </div>
-        <!-- Animowany pasek pod tytułem, pełna szerokość -->
-        <div class="header-animation" aria-hidden="true"></div>
+        
+        <!-- Futurystyczne linie i efekty -->
+        <div class="header-effects">
+            <div class="energy-lines"></div>
+            <div class="glow-border"></div>
+        </div>
     </header>
 
-    <main class="container">
-        <aside class="sidebar neon-border">
-            <h2>Kategorie</h2>
-            <ul id="categoriesList">
-                <!-- Kategorie będą ładowane dynamicznie przez JS -->
-            </ul>
-            <div class="how-to-add">
-                <h3>Jak dodać własny skrypt?</h3>
-                <p>Chcesz dodać swój skrypt do ShellVault?</p>
-                <ol>
-                    <li>Sklonuj repozytorium.</li>
-                    <li>Edytuj plik <code class="inline-code">data/scripts.json</code> dodając swój skrypt.</li>
-                    <li>Umieść plik <code class="inline-code">.sh</code> w folderze <code class="inline-code">files/</code>.</li>
-                    <li>Utwórz Pull Request!</li>
-                </ol>
-                <p class="note">Pamiętaj o dodaniu SHA256! Wygeneruj go komendą: <code class="inline-code">sha256sum &lt;plik.sh&gt;</code></p>
+    <!-- Filters Bar (zamiast sidebar) -->
+    <section class="filters-bar">
+        <div class="container-full">
+            <div class="filters-content">
+                <div class="filter-group">
+                    <label class="filter-label">Categories:</label>
+                    <div class="category-pills" id="categoriesList">
+                        <!-- Kategorie będą ładowane dynamicznie przez JS -->
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Sort by:</label>
+                    <select class="cyber-select" id="sortSelect">
+                        <option value="name">Name</option>
+                        <option value="size">Size</option>
+                        <option value="recent">Recent</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">View:</label>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">Grid</button>
+                        <button class="view-btn" data-view="list">List</button>
+                    </div>
+                </div>
             </div>
-        </aside>
+        </div>
+    </section>
 
-        <section class="script-grid" id="scriptGrid">
-            <!-- Skrypty będą ładowane dynamicznie przez JS -->
-            <div class="no-results" id="noResults" style="display: none;">
-                <p>Brak skryptów spełniających kryteria wyszukiwania.</p>
-                <button id="clearSearch" class="neon-button small">Wyczyść wyszukiwanie</button>
+    <!-- Main content - Full width grid -->
+    <main class="main-content">
+        <div class="container-full">
+            <section class="scripts-grid" id="scriptGrid">
+                <!-- Skrypty będą ładowane dynamicznie przez JS -->
+                <div class="no-results cyber-card" id="noResults" style="display: none;">
+                    <div class="no-results-content">
+                        <div class="no-results-icon">🔍</div>
+                        <p>No scripts found matching your criteria.</p>
+                        <button id="clearSearch" class="cyber-button-primary">Clear Search</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- How to contribute - jako floating info panel -->
+            <div class="contribute-panel" id="contributePanel" style="display: none;">
+                <div class="cyber-card">
+                    <h3>How to Add Your Script?</h3>
+                    <p>Want to contribute to ShellVault?</p>
+                    <ol>
+                        <li>Clone the repository</li>
+                        <li>Edit <code class="inline-code">data/scripts.json</code> to add your script</li>
+                        <li>Place your <code class="inline-code">.sh</code> file in <code class="inline-code">files/</code> folder</li>
+                        <li>Create a Pull Request!</li>
+                    </ol>
+                    <p class="note">Remember to add SHA256! Generate it with: <code class="inline-code">sha256sum &lt;file.sh&gt;</code></p>
+                    <button class="cyber-button-secondary" onclick="document.getElementById('contributePanel').style.display='none'">Close</button>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer class="neon-border">
-        <div class="container">
-            <p>&copy; 2025 ShellVault. All rights reserved. <span class="neon-text">Hacker vibes only.</span></p>
+    <!-- Futurystyczny footer -->
+    <footer class="cyber-footer">
+        <div class="container-full">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p class="copyright">&copy; 2025 ShellVault</p>
+                    <p class="tagline">Advanced Shell Script Repository</p>
+                </div>
+                <div class="footer-section">
+                    <div class="tech-stats">
+                        <span class="stat-item">Scripts: <span id="scriptsCount">---</span></span>
+                        <span class="stat-item">Categories: <span id="categoriesCount">---</span></span>
+                        <span class="stat-item">Status: <span class="status-online">ONLINE</span></span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="social-links">
+                        <span class="link-item">GitHub</span>
+                        <span class="link-item">Docs</span>
+                        <span class="link-item">API</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-effects">
+                <div class="footer-glow"></div>
+                <div class="data-stream"></div>
+            </div>
         </div>
     </footer>
 
-    <div id="tooltip" class="tooltip">Uruchamiasz na własną odpowiedzialność!</div>
+    <!-- Enhanced tooltip -->
+    <div id="tooltip" class="cyber-tooltip">
+        <div class="tooltip-content"></div>
+        <div class="tooltip-glow"></div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-text">Loading ShellVault...</div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="assets/app.js"></script>

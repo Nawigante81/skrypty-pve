@@ -14,18 +14,63 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 <body>
-    <div class="scanlines"></div>
-    <header class="neon-border">
-        <div class="container">
-            <h1 class="logo">
-                <a href="index.html" class="neon-text no-underline">&lt;ShellVault/&gt;</a>
-            </h1>
-            <p class="subtitle" id="scriptHeaderSubtitle">Szczegóły skryptu</p>
+    <!-- Futurystyczne warstwy tła -->
+    <div class="background-layer">
+        <div class="animated-gradient"></div>
+        <div class="particles-container"></div>
+        <div class="geometric-patterns"></div>
+    </div>
+    
+    <!-- Efekty wizualne -->
+    <div class="visual-effects">
+        <div class="scanlines"></div>
+        <div class="mouse-light" id="mouseLight"></div>
+    </div>
+
+    <!-- Futurystyczny header -->
+    <header class="futuristic-header">
+        <div class="container-full">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="cyber-logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-bracket">&lt;</span>
+                            <span class="logo-text">ShellVault</span>
+                            <span class="logo-bracket">/&gt;</span>
+                        </a>
+                    </h1>
+                    <p class="cyber-subtitle" id="scriptHeaderSubtitle">Script Details</p>
+                </div>
+                
+                <div class="search-section">
+                    <div class="cyber-search-wrapper">
+                        <input type="text" disabled placeholder="Script details view..." class="cyber-input">
+                        <div class="search-effects">
+                            <span class="search-shortcut">Details</span>
+                            <div class="input-glow"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="top-navigation">
+                    <a href="index.html" class="nav-button">
+                        <span class="nav-icon">←</span>
+                        <span class="nav-text">Back</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Futurystyczne linie i efekty -->
+        <div class="header-effects">
+            <div class="energy-lines"></div>
+            <div class="glow-border"></div>
         </div>
     </header>
 
-    <main class="container script-details-page">
-        <section class="script-card full-width neon-border" id="scriptDetailsContainer" style="display: none;">
+    <main class="main-content">
+        <div class="container-full">
+            <section class="cyber-card script-details-card fade-in" id="scriptDetailsContainer" style="display: none;">
             <div class="script-header">
                 <h2 id="scriptName"></h2>
                 <div class="script-tags" id="scriptTags"></div>
